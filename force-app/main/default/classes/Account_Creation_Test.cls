@@ -9,6 +9,6 @@ public class Account_Creation_Test {
         Account_Creation.CreateNewAccRec();
         System.assertEquals('Test', acc.Name, 'Test pass successfully');
         Test.stopTest();
-        //testing
+       
     }
 }
