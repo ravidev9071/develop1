@@ -1,11 +1,9 @@
 import { LightningElement, track } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import pageUrl from '@salesforce/resourceUrl/recaptchaV2';
-//import fetchPODetails from '@salesforce/apex/STP_POHistoryCallout.fetchPODetails';
 import STP_pageTitle from '@salesforce/label/c.STP_POHistoryPageTitle';
 import STP_poNumberLabel from '@salesforce/label/c.STP_WebCasePONumber';
 import STP_invoiceNumberLabel from '@salesforce/label/c.STP_WebCaseInvoiceNumber';
-
 import fetchPODetails from '@salesforce/apex/STP_POHistoryController.fetchPODetails';
 
 export default class STP_POHistoryInterface extends LightningElement {
@@ -33,10 +31,8 @@ export default class STP_POHistoryInterface extends LightningElement {
        // { label: 'Payment Term', fieldName: 'Paymentterm' },
        // { label: 'Total Value', fieldName: 'TotalValue' },
        // { label: 'Currency Code', fieldName: 'CurrencyCode' },
+        // { label: 'Remarks', fieldName: 'Remarks' },
         
-       // { label: 'Remarks', fieldName: 'Remarks' },
-        
-         // Added Invoice as a column
     ];
     @track searchStr = 'Search';
 
@@ -72,30 +68,24 @@ if (event.origin === 'https://ravidev2023-dev-ed.develop.my.site.com') {
         console.log('Raw Event Data:', event.data);
         console.log('Type of Event Data:', typeof event.data);
 
-        // Sanitize the data
         const sanitizedData = (event.data || '').trim();
         console.log('Sanitized Data:', sanitizedData);
 
         if (sanitizedData) {
     console.log('Sanitized Data:', sanitizedData);
 
-    // Check if the data matches the expected format
     if (sanitizedData === 'captcha success') {
         console.log('Captcha verified successfully.');
         this.isCaptchaVerified = true;
         this.recaptcha=true;
           if (this.recaptcha) {
-        // Create synthetic events or directly set values
         const poEvent = { target: { id: 'STP_WebCasePONumber', value: this.poNo } };
         const invoiceEvent = { target: { id: 'STP_WebCaseInvoiceNumber', value: this.invoiceNo } };
-
-        // Simulate user input to ensure handleChange processes the data
         this.handleChange(poEvent);
         this.handleChange(invoiceEvent);
     }
         this.searchDisabled = false;
     } else if (sanitizedData === 'captcha failure') {
-        console.log('Captcha verification failed.');
         this.isCaptchaVerified = false;
         this.searchDisabled = true;
         this.showToast('Error', 'Captcha verification failed', 'error');
@@ -113,10 +103,7 @@ if (event.origin === 'https://ravidev2023-dev-ed.develop.my.site.com') {
 } else {
     console.warn('Unexpected event origin:', event.origin);
 }
-
-
-
-    }
+}
 
     handleChange(event) {
       
@@ -126,7 +113,6 @@ if (event.origin === 'https://ravidev2023-dev-ed.develop.my.site.com') {
         } else if (field.includes('STP_WebCaseInvoiceNumber')) {
             this.invoiceNo = event.target.value;
         }
-          //  this.isDisabled = !(this.poNo && this.invoiceNo);
             if(this.poNo && this.invoiceNo && this.recaptcha === true){
               this.isDisabled=false;
               
@@ -143,11 +129,6 @@ if (event.origin === 'https://ravidev2023-dev-ed.develop.my.site.com') {
             this.showToast('Error', 'Please complete the CAPTCHA verification', 'error');
             return;
         }
-                // Search for matching record in mock data
-       
-    
-
-
         fetchPODetails({ poNumber: this.poNo, invoiceNumber: this.invoiceNo })
             .then((result) => {
                 if (result) {
