@@ -1,6 +1,5 @@
 public class STP_POHistoryHelper {
 
-    // PurchaseOrder class definition
     public class PurchaseOrder {
         @AuraEnabled public String PONumber { get; set; }
         @AuraEnabled public String VendorID { get; set; }
@@ -13,7 +12,6 @@ public class STP_POHistoryHelper {
         @AuraEnabled public String DocumentDate { get; set; }
     }
 
-    // Wrapper class to wrap PurchaseOrder and other fields
     public class PurchaseOrderWrapper {
         @AuraEnabled public List<PurchaseOrder> PurchaseOrder { get; set; }
         @AuraEnabled public String POLineItem { get; set; }
@@ -25,11 +23,9 @@ public class STP_POHistoryHelper {
         }
     }
 
-    // Static method to generate mock data
     public static PurchaseOrderWrapper getMockData() {
         PurchaseOrderWrapper wrapper = new PurchaseOrderWrapper();
 
-        // Mock PurchaseOrder entries
         PurchaseOrder po1 = new PurchaseOrder();
         po1.PONumber = 'PO12345';
         po1.VendorID = 'VEND001';
@@ -52,11 +48,9 @@ public class STP_POHistoryHelper {
         po2.Remarks = 'Regular order';
         po2.DocumentDate = '2025-01-01';
 
-        // Add mock data to the list
         wrapper.PurchaseOrder.add(po1);
         wrapper.PurchaseOrder.add(po2);
 
-        // Add other fields
         wrapper.POLineItem = 'Sample POLineItem Data';
         wrapper.Invoice = 'INV12345';  // Ensure Invoice is set
         wrapper.GoodsReceipts = 'Sample GoodsReceipts Data';
@@ -64,26 +58,20 @@ public class STP_POHistoryHelper {
         return wrapper;
     }
 
-    // Static helper method to fetch details by PONumber and Invoice
     public static List<PurchaseOrderWrapper> fetchPODetailsHelper(String poNumber, String invoiceNumber) {
-        // Fetch mock data
         PurchaseOrderWrapper mockData = getMockData();
         
-        // Initialize the result list
         List<PurchaseOrderWrapper> result = new List<PurchaseOrderWrapper>();
 
-        // Check if the invoice number matches
         if (String.isNotEmpty(invoiceNumber) && invoiceNumber == mockData.Invoice) {
             List<PurchaseOrder> matchingOrders = new List<PurchaseOrder>();
 
-            // Filter orders by PONumber
             for (PurchaseOrder po : mockData.PurchaseOrder) {
                 if (String.isNotEmpty(po.PONumber) && po.PONumber == poNumber) {
                     matchingOrders.add(po);
                 }
             }
 
-            // If matching records exist, create a wrapper for the results
             if (!matchingOrders.isEmpty()) {
                 PurchaseOrderWrapper wrapper = new PurchaseOrderWrapper();
                 wrapper.PurchaseOrder = matchingOrders;
@@ -92,7 +80,6 @@ public class STP_POHistoryHelper {
             }
         }
 
-        // Return the result with matching records or an empty list
         return result;
     }
 }

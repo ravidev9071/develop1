@@ -2,7 +2,6 @@
    
    <lightning-card style={outerCustomStyle}>
       <div class="slds-grid slds-gutters ">
-         
          <div class="slds-col">
             <span>
                <div class="slds-align_absolute-center">
@@ -19,7 +18,6 @@
                   <label for="poNumber" class="input-label">{label.STP_poNumberLabel}
                   <span class="required-star">*</span>
                   </label>
-                  
                   <input
                      type="text"
                      id="STP_WebCasePONumber"
@@ -27,11 +25,9 @@
                      value={poNo}
                      oninput={handleChange}
                      />
-                     
                      <template if:false={isDisabled}>
                            <span class="success-icon"></span>
                      </template>
-
                </div>
                <div class="input-container">
                   <label for="invoiceNo" class="input-label">{label.STP_invoiceNumberLabel}
@@ -47,7 +43,6 @@
                      <template if:false={isDisabled}>
                            <span class="success-icon"></span>
                      </template> 
-
                </div>
                <template if:true={showiframeandbtn}>
                <div>
@@ -72,7 +67,6 @@
             </span>
          </div>
       </div> 
-
     </lightning-card >
    <template if:true={showTable}>
      <div class="slds-grid slds-grid_vertical custom-table-container slds-align_absolute-center">
