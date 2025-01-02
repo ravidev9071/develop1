@@ -1,0 +1,32 @@
+<template>
+	<table class="slds-table slds-table_cell-buffer slds-table_bordered">
+		<tr>
+			<td><b>Name</b></td>
+			<td><b>Site</b></td>
+			<td><b>Action</b></td>
+		</tr>
+		<template for:each={accounts.data} for:item="acc">
+			<tr key={acc.Id}>
+				<template if:true={acc.IsRecall__c}>
+					<td>
+
+						<lightning-button label="Recall" variant="brand" value={acc.Id} onclick={handleUpdate}>
+						</lightning-button>
+					</td>
+				</template>
+				<template if:false={acc.IsRecall__c}>
+					<td>no access</td>
+				</template>
+
+				<td>
+					{acc.LastName}
+				</td>
+				<td>
+					{acc.Assistant}
+				</td>
+
+			</tr>
+		</template>
+	</table>
+</template>
+</template>

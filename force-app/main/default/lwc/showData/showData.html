@@ -1,0 +1,118 @@
+<template>
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-label="Example default base table of Opportunities">
+        <thead>
+          <tr class="slds-line-height_reset">
+            <th class="" scope="col">
+                <div class="slds-truncate" title="Icon">Icon</div>     
+              </th>
+            <th class="" scope="col">
+              <div class="slds-truncate" title="Account Name">Account Name</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate" title="Phone">Phone</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate" title="Website">Website</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate" title="Type">Type</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate" title="Last Modified By">Last Modified By</div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+            <template for:each={xyz} for:item="item" for:index="index">
+            <tr key={item.Id} class="slds-hint-parent" data-index={index}>
+            
+            <td data-label="Expand" scope="row">
+            <div class="slds-truncate" title="Expand">
+                <template if:false={item.isExpanded}>
+                  <lightning-icon icon-name="utility:new" data-is-expanded={item.isExpanded} data-index={index}
+                  data-account-id={item.Id} 
+                  alternative-text="Expand" size="x-small"  title={index} 
+                  onclick={hancleclick}></lightning-icon>
+              </template>
+              <template if:true={item.isExpanded}>
+                <lightning-icon icon-name="utility:dash" data-index={index}  
+                data-account-id={item.Id} alternative-text="collpase" 
+                data-is-expanded={item.isExpanded}
+                size="xx-small" title={item.Id} 
+                onclick={hancleclickCollpase}></lightning-icon>
+                </template>
+              </div> 
+            </td>
+            <td data-label="Account Name">
+            <div class="slds-truncate" title="Name"><b><i>
+              <a href={refUrl} title={item.Id} target="_blank" onclick={handleNavigationClick}>{item.Name}</a>
+            </i></b></div>
+            </td>
+            <td data-label="Phone">
+            <div class="slds-truncate" title="Phone"><b>{item.Phone}</b></div>
+            </td>
+            <td data-label="Website">
+            <div class="slds-truncate" title="Website"><b>{item.Website}</b></div>
+            </td>
+            <td data-label="Type">
+            <div class="slds-truncate" title="Type"><b>{item.Type}</b></div>
+            </td>
+            <td data-label="LastModifiedById">
+            <div class="slds-truncate" title="LastModifiedById"><b>{item.LastModifiedById}</b></div>
+            </td>
+            </tr>
+          
+          <template  if:true={item.isExpanded}>
+            <tr key={item.id} class="messgaclr"> 
+              <td><b> {item.messgage}</b></td>
+            </tr>
+            <template if:true={item.Contacts} >
+              
+              <tr key={item.id} class="contacthaed">
+                
+                <th><b>S.No</b></th>
+                <th><b>Name</b></th>
+                <th><b>Phone</b></th>
+                <th><b>Email</b></th>
+                <th><b>Description</b></th>
+                <th><b>Last Modified</b></th>
+              </tr>
+              <template for:each={item.Contacts} for:item="con">
+                
+                <template if:true={con.Id}>
+                <tr key={item.Id} class="contactclass">
+                <td data-label="index" >
+                <div class="slds-truncate" title="index">{con.index}</div>
+                </td>
+                <td data-label="Name">
+                <div class="slds-truncate" title="Name">
+                  <a href={refUrlcon} title={con.Id} target="_blank" onclick={handleNavigationClickcontact}>{con.Name}
+
+                  </a>
+                </div>
+                </td>
+                <td data-label="Phone">
+                <div class="slds-truncate" title="Phone">{con.Phone}</div>
+                </td>
+                <td data-label="Email">
+                <div class="slds-truncate" title="Email">{con.Email}</div>
+                </td>
+                <td data-label="Description">
+                <div class="slds-truncate" title="Description">{con.Description}</div>
+                </td>
+                <td data-label="LastModifiedById">
+                <div class="slds-truncate" title="Last Modified By">{con.LastModifiedById}</div>
+                </td>
+            </tr>
+          </template>
+          
+
+          </template>
+          </template>
+        
+          </template>
+          
+        </template>
+        </tbody>
+      </table>
+</template>

@@ -1,0 +1,9 @@
+<apex:page controller="pageurlclass">
+      
+  1.  {!headerdata}
+
+  2.  {!urlvalue}
+
+  3.  {!url}
+
+</apex:page>

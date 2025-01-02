@@ -1,0 +1,35 @@
+<template>
+
+<lightning-card icon-name="standard:account" variant="base" title="Welcome To ChatGPT">
+<template if:true={property}>
+    <lightning-spinner alternative-text='alternativeText' size='large'>
+    </lightning-spinner>
+</template>
+<table>
+    <tr>
+        <td>
+            <lightning-input type='search' label='' value='' placeholder="Send a message" onchange={handleOnChange}></lightning-input>
+    
+        </td>
+        <td>
+            <lightning-button-icon icon-name="utility:search"  onclick={handleOnClick} variant="container" alternative-text="search..." class="slds-m-left_xx-small" title="Zoom out"></lightning-button-icon>
+
+
+    </td></tr>
+    </table>
+    
+    
+
+
+
+
+    
+    <p><lightning-formatted-text value={showdata} ></lightning-formatted-text></p>
+
+    
+
+
+</lightning-card>
+
+
+</template>

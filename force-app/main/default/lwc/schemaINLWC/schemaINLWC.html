@@ -1,0 +1,49 @@
+<template>
+        <lightning-card  variant="Narrow"  title="User detail" icon-name="standard:account">
+        Current Record Id :{recordId}
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col">
+                <span>
+                    <table>
+                        <tr >
+                        <td class="slds-p-left_xx-large"><b>Id</b> </td>
+                        <td class="slds-p-right_xx-large">{userIds}</td>
+                        </tr>
+                        <tr>
+                        <td class="slds-p-left_xx-large"><b>User Name</b></td>
+                        <td class="slds-p-right_xx-large"> {usrName}</td>
+                        </tr>
+                        <tr>
+                            <td class="slds-p-left_xx-large"> <b>User Email</b></td>
+                            <td class="slds-p-right_xx-large">{usrEmail}</td>
+                            </tr>
+                        </table>
+
+                </span>
+                </div>
+                <div class="slds-col">
+                <span>
+                    <table>
+                        <tr >
+                        <td class="slds-p-left_xx-large"><b>Mobile Number</b> </td>
+                        <td class="slds-p-right_xx-large">{usrMobile}</td>
+                        </tr>
+                        <tr>
+                        <td class="slds-p-left_xx-large"><b>Company</b></td>
+                        <td class="slds-p-right_xx-large"> {userCmpy}</td>
+                        </tr>
+                        <tr>
+                            <td class="slds-p-left_xx-large"> <b>Title</b></td>
+                            <td class="slds-p-right_xx-large">{userAdd}</td>
+                            </tr>
+                        </table>
+                </span>
+                </div>
+            </div>
+        
+        
+        
+        
+        
+    </lightning-card>
+</template>

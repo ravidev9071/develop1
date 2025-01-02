@@ -1,0 +1,75 @@
+<template> <lightning-card title="File Preview and Download">
+         <template for:each={filesList} for:item="file">
+             <div key={file.value} class="slds-box">
+                 <div class="slds-grid slds-wrap">
+                     <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_12-of-12">
+                       <p><strong>FileName - </strong>{file.label}</p>
+                     </div>
+                     <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_12-of-12">
+                       <a href={file.url} download>Download</a>
+                     </div>
+                     <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_12-of-12">
+                       <lightning-button label="Preview" 
+                       variant="brand"
+                      data-id={file.value}
+                      onclick={previewHandler}
+                       ></lightning-button>
+                     </div>
+                   </div>
+             </div>
+         </template>
+    </lightning-card> 
+    <br></br>
+    <div class="slds-p-left_xx-large">
+<lightning-card  variant="Narrow"  title="Files " icon-name="standard:account" >
+
+                                    <template for:each={resourcesList} for:item="file">  
+                                        <li key={file.value}><a href={file.url}>{file.label}</a></li>
+                                    </template>
+                              
+</lightning-card>
+    </div>
+    
+    <!-- <lightning-card title="How to display the Contacts based on Account Name in LWC" custom-icon="custom:icon13">
+        <div class="slds slds-p-horizontal--medium">
+         <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_4-of-12 slds-m-bottom--medium">
+                <lightning-Input type="search" placeholder="Search..." value={accountName} name="accountName" class="accountName" onchange={handleChangeAccName}></lightning-input>                 
+             </div>
+             <div class="slds-col slds-size_6-of-12 slds-m-top--medium" style="margin-top: 19px; margin-left: 10px;">                 
+                    <lightning-button label="Search Account Name1" size="small" variant="brand" onclick={handleAccountSearch} icon-name="utility:search" icon-position="right"></lightning-button>
+             </div>
+         </div>
+          
+         <h2>Account Name :- <span><strong>{currentAccountName}</strong></span></h2><br/> 
+         <h3><strong><span style="color:brown;">{dataNotFound}</span></strong></h3><br/>
+
+           <h2 class="slds-m-bottom--x-small" style="color:darkslateblue; font-weight:bold;">Displaying Contacts Records based on Account Name</h2>
+           <table class="slds-table slds-table_cell-buffer slds-table_bordered" border="1" cellspacing="0" cellpadding="0"  style="border-collapse:collapse;">
+               <thead>
+                   <tr>
+                       <th>First Name</th>
+                       <th>Last Name</th>
+                       <th>Email</th>
+                       <th>Phone</th>
+                       <th>Description</th>
+                   </tr>
+               </thead>
+               <tbody>
+                   <template for:each={records} for:item="conItem">
+                       <tr key={conItem.Id}>
+                           <td>{conItem.FirstName}</td>
+                           <td>{conItem.LastName}</td>
+                           <td>{conItem.Email}</td>
+                           <td>{conItem.Phone}</td>
+                           <td>{conItem.Account.Name}</td>
+                       </tr>
+                   </template>
+               </tbody>
+           </table>
+        </div>
+
+<br/><br/>
+   
+    </lightning-card> -->
+</template>

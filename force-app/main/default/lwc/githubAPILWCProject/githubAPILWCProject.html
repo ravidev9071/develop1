@@ -1,0 +1,203 @@
+<template>
+
+    <lightning-card icon-name="" variant="base">
+        <div class="slds-align_absolute-center">
+        <h1 style="font-size: x-large;
+                color: darkviolet;"><b>Welcome to GitHub</b></h1>
+    
+        </div> <br/>
+        <div class="slds-align_absolute-center">
+            <lightning-button variant='brand' 
+            label='Create Repo' 
+            title='create repo' 
+            onclick={showModalBox}
+            class='cssClass'></lightning-button>
+        </div>
+          <!-- modal start -->      
+   <template if:true={isShowModal}>
+
+    <!--
+        I Used SLDS for this code
+        Here is link https://www.lightningdesignsystem.com/components/modals/
+    --> 
+
+<section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+<div class="slds-modal__container">
+<!-- modal header start -->
+  <header class="slds-modal__header">
+     <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={hideModalBox}>
+        <lightning-icon icon-name="utility:close"
+           alternative-text="close"
+           variant="inverse"
+           size="small" ></lightning-icon>
+        <span class="slds-assistive-text">Close</span>
+     </button>
+     <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Please Create Repositry</h2>
+  </header>
+
+  <!-- modal body start -->
+  <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+<lightning-input type='text' label='Name' value={rnam} onchange={namechange} required="true"><br/>
+</lightning-input>
+<lightning-input type='text' label='Description' value={rdesr} onchange={namedes} required="true"><br/>
+</lightning-input><br/>
+<select class="slds-select" name = "optionSelect" onchange={changeHandler} >
+    <option value="false">Pubic</option>
+    <option value="true">Private</option>
+</select> 
+
+  </div>
+
+  <!-- modal footer start-->
+  <footer class="slds-modal__footer">
+   <template if:true={showbutton}>
+    <lightning-button variant='brand' label='Create Repo' title='title' onclick={CreateRepo} class='cssClass'>
+    </lightning-button>
+   </template>
+   <template if:false={showbutton}>
+    <lightning-button variant='brand' label='Update Repo' title='title' onclick={Updaterepohandle} class='cssClass'>
+    </lightning-button>
+   </template>
+   
+    
+     <button class="slds-button slds-button_neutral" onclick={hideModalBox}>Cancel</button>
+  </footer>
+
+</div>
+</section>
+<div class="slds-backdrop slds-backdrop_open"></div>
+</template>
+<!-- modal end -->
+
+        
+
+    <div class="slds-box slds-theme_default">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered">
+
+        <thead>
+        
+            <tr >
+                <th class="" scope="col" style="background-color: darkgoldenrod;">
+                    <div class="slds-truncate" title="Account Name">ID</div>
+            </th>
+            <th class="" scope="col" style="background-color: darkgoldenrod;">
+                    <div class="slds-truncate" title="Account Industry">Name</div>
+            </th>
+            <th class="" scope="col" style="background-color: darkgoldenrod;">
+                <div class="slds-truncate" title="Account Industry">Full Name</div>
+            </th>
+            <th class="" scope="col" style="background-color: darkgoldenrod;">
+                <div class="slds-truncate" title="Account Industry">Description</div>
+            </th>
+            <th class="" scope="col" style="background-color: darkgoldenrod;">
+                <div class="slds-truncate" title="Account Industry">Language</div>
+            </th>
+            <th class="" scope="col" style="background-color: darkgoldenrod;">
+                <div class="slds-truncate" title="Account Industry">Branch</div>
+            </th>
+            <th class="" scope="col" style="background-color: darkgoldenrod;">
+                <div class="slds-truncate" title="Account Industry">Github Owner</div>
+            </th>
+            <th class="" scope="col" style="background-color: darkgoldenrod;">
+                <div class="slds-truncate" title="Account Industry">Update</div>
+            </th>
+            <th class="" scope="col" style="background-color: darkgoldenrod;">
+                <div class="slds-truncate" title="Account Industry">Delete</div>
+            </th>
+                </tr>
+            </thead>
+            <tbody>
+            <template for:each={gitdata.data} for:item='item'>
+                <tr key={item.id} style="background-color: cadetblue;">
+                    <td>{item.id}</td>
+                    <td>{item.name}</td>
+                    <td>{item.full_name}</td>
+                    <td>{item.description}</td>
+                    <td>{item.language}</td>
+                    <td>{item.default_branch}</td>
+                    <td>{item.login}</td>
+                    <td><lightning-button variant='destructive' name={item.name} value={item.description} label='Update' title={item.full_name} onclick={Updatehandle} class='cssClass'></lightning-button></td>
+                    <td><lightning-button variant='destructive' label='Delete' title={item.full_name} onclick={showModalBox1} class='cssClass'>
+                    </lightning-button></td>
+                </tr>
+            </template>
+            </tbody>
+
+</table>
+
+</div>  
+
+
+<template if:true={isShowModal1}>
+
+    <!--
+        I Used SLDS for this code
+        Here is link https://www.lightningdesignsystem.com/components/modals/
+    --> 
+
+<section role="dialog" tabindex="-1" aria-labelledby="modal-heading-02" aria-modal="true" aria-describedby="modal-content-id-2" class="slds-modal slds-fade-in-open">
+<div class="slds-modal__container">
+<!-- modal header start -->
+  <header class="slds-modal__header">
+     <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={hideModalBox1}>
+        <lightning-icon icon-name="utility:close"
+           alternative-text="close"
+           variant="inverse"
+           size="small" ></lightning-icon>
+        <span class="slds-assistive-text">Close</span>
+     </button>
+     <h2 id="modal-heading-02" class="slds-text-heading_medium slds-hyphenate">Perform do delete opertion in Repo</h2>
+  </header>
+
+  <!-- modal body start -->
+  <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2">
+        <p>Please do not delete your repo</p>
+  </div>
+
+  <!-- modal footer start-->
+  <footer class="slds-modal__footer">
+    <lightning-button variant='destructive' label='Delete' onclick={handleOnClick} class='cssClass'></lightning-button>
+     <button class="slds-button slds-button_neutral" onclick={hideModalBox1}>Cancel</button>
+  </footer>
+
+</div>
+</section>
+<div class="slds-backdrop slds-backdrop_open"></div>
+</template>
+
+
+ 
+
+
+
+
+
+  <div class="slds-grid slds-wrap">
+    <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12">
+      <span><template for:each={getpathname} for:item='item'>
+    
+        <a key={item.id}  data-name={item} onclick={handleanchor}>{item}<br/></a>
+    </template> </span>
+    </div>
+    <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12" style="border-left: 6px solid blue;
+    height: 200px;">
+        <h1><b>Your file data</b></h1>
+      <span>
+
+        <p style="    color: cyan;
+        position: relative;
+        background-color: darkgoldenrod;
+        left: 30px;"><b><lightning-formatted-text value={finalcontent} ></lightning-formatted-text></b></p>
+
+      </span>
+    </div>
+  </div>
+
+
+
+
+
+
+
+    </lightning-card>
+</template>

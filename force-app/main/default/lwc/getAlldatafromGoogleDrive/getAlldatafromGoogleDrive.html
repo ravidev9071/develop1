@@ -1,0 +1,69 @@
+<template>
+    <lightning-card icon-name="" variant="base">
+        <!-- <template if:true={spinner}>
+       
+        <lightning-spinner 
+        alternative-text="Loading" 
+        size="medium"
+        variant="base"
+        ></lightning-spinner>
+    </template> -->
+   
+
+        <div>
+            <img style="max-height: 50px" alt="Image on T.O." src={driveImage}/>
+            <span style="font-size: 25px;    margin-left: -23px;
+            bottom: -5px;
+            position: relative;"><b style="margin-left: 22px;">Google Drive</b></span>
+        </div>
+    <br/>
+    <template if:true={spinner}>    
+        <lightning-progress-bar style="background:red" value={progress} variant="circular"></lightning-progress-bar>
+        
+        <div class="slds-align_absolute-center" style="height:5rem">
+        <b>   {progress} %</b>
+        </div>
+
+    </template>
+    <div class="slds-grid">
+    <template if:false={butshow}>
+    
+        <div class="slds-col slds-p-horizontal_medium">
+            <span>
+                <lightning-button variant='brand' label='Authorization' title='title' onclick={oAuth}>
+                </lightning-button>
+                </span>
+        </div>
+        <div class="slds-col slds-p-horizontal_medium">
+            <span>
+                <lightning-button variant='brand' label='Get data from drive' title='title' onclick={getcode}>
+                </lightning-button>
+                </span>
+        </div>
+       
+    </template>        
+</div>
+        <div class="slds-scrollable_y" style="height: 25rem;width: 100%;" tabindex="0">
+            <b style="color: Blue;">   Code::: {code}</b><br/>
+            <b style="color: red;"> Token ::: {token1}</b>
+        <table>
+        <template for:each={drivedata} for:item='drive' for:index="ind">
+        <tr style=" border: 1px solid black;
+        border-collapse: collapse;    background-color: gold;color: blue;
+        " key={drive}>
+            <td style=" border: 1px solid black;
+            border-collapse: collapse; background-color: gold;color: blue;
+
+            "><b>{drive.index}</b></td>
+            <td style=" border: 1px solid black;
+            border-collapse: collapse;    background-color: gold;color: blue;
+            " class="slds-p-left_large">    
+            <b>  {drive.name}</b></iframe>
+            </td>
+        </tr>
+    </template>
+</table>
+
+    </div>
+    </lightning-card>
+</template>

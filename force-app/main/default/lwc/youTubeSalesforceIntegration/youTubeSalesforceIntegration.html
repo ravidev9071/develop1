@@ -1,0 +1,64 @@
+<template>
+            <lightning-card icon-name="" variant="base">
+                <div>
+                    <img style="max-height: 50px" alt="Image on T.O." src={torontoImage}/>
+                    <span style="font-size: 25px;    margin-left: -23px;
+                    bottom: -5px;
+                    position: relative;"><b>YouTube</b></span>
+                </div>
+            
+                <template if:true={property}>
+            <lightning-spinner alternative-text='alternativeText' size='small'>
+            </lightning-spinner>
+            </template>
+
+            <div class="slds-align_absolute-center" style="height:5rem">
+            <lightning-layout-item size="6">
+             <!--   <lightning-input type='search'  style="    top: -75px;
+                position: relative;" label='' value=''   
+                placeholder="Search"
+                onchange={handleOnChange}></lightning-input> -->
+
+                <input type="search" id="text-input-id-47" label='' value='' placeholder="Search"  style="top: -75px;
+                width: 98%;
+                height: 49px;
+                border-radius: 150px
+            px
+            ;
+                position: relative;" onchange={handleOnChange}/>
+
+            <lightning-button-icon style="position: relative;
+            margin-top: -116px;left: -21px;" 
+            icon-name="utility:search" 
+            class="slds-float_right slds-p-bottom_xx-large"  
+            onclick={handleOnClick}  variant="container" 
+            alternative-text="search..."  
+            title="Zoom out"></lightning-button-icon>
+            </lightning-layout-item>
+            </div>
+
+            <table>
+            <template for:each={videodata} for:item='vdo'>
+            <tr key ={vdo.id} class="slds-p-around_x-small slds-scrollable" style="height:5rem;width:24rem">
+                <td>
+                <div class="slds-grid slds-gutters" >
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_3-of-12">
+                    <span><iframe  allowfullscreen src={vdo.myTest}></iframe>   
+                    <br/>
+                    </span>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_9-of-12">
+                    <span>
+                    <b> {vdo.title}</b>
+                    </span><br/>
+                    <span>{vdo.channelTitle}</span><br/><br/>
+                    <span>{vdo.description}</span>
+                    </div>
+                </div>
+            </td>
+            </tr>        
+            </template>
+            </table>
+
+            </lightning-card>
+</template>

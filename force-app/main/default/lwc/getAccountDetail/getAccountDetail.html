@@ -1,0 +1,18 @@
+<template>
+<lightning-input type="text" value="" variant="standard" label="Account Name" name="input1" placeholder="type here..."> </lightning-input>
+
+<lightning-input type="text" value="" variant="standard" label="Second Input" name="input2" placeholder="type here..."> </lightning-input>
+
+<lightning-button class="slds-m-left_small nav-button"
+                     label="Create Record6"
+                     variant="brand"
+                     
+                     onclick={handleclick}></lightning-button>
+{name}
+<template for:each={accList} for:item="abc">
+<p key={abc.Id}>
+{abc.Name}
+</p>
+</template>
+
+</template>

@@ -1,0 +1,21 @@
+<aura:component controller="GetAuthCode" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="ShowAuth" type="String" />
+        <aura:attribute name="showToken" type="String" />
+
+    <aura:attribute name="isdisabled" type = "boolean" default="false"/>
+    <aura:attribute name="isdisable" type = "boolean" default="false"/>
+    <aura:attribute name="check" type = "boolean" default="false"/>
+    <h1 class='tag'>Welcome To API World</h1>
+    
+
+    <lightning:button variant="brand" label="Authorize" disabled = "{!v.isdisable}"  title="Authorize" onclick="{! c.Authorize }"  class="slds-m-top_xx-large"/>
+    <lightning:button variant="brand"  label="Token" title="Token" disabled = "{!v.isdisabled}" onclick="{! c.Token }" class="slds-m-top_xx-large"/>
+    <aura:if isTrue="{!v.check}">
+
+    </aura:if>
+    <br/><br/><br/>
+    <h1>  Access Token:</h1>
+    {!v.showToken}
+    
+    
+</aura:component>

@@ -1,0 +1,154 @@
+iframe {
+    height:50px !important;
+    width: 100%;
+    overflow:hidden;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    border: 0px;
+    top:0;
+}
+iframe::-webkit-scrollbar {  
+    display: none;
+}
+@media screen and (max-width: 600px) {
+    .btn-align{
+        text-align: center !important;
+    }
+    .themeLogo{
+        left: 43% !important;
+    }
+  }
+  /* Add this to the associated .css file */
+.input-container {
+    margin: 10px 0;
+}
+
+.custom-input {
+    border: none;
+    border-bottom: 1px solid black; /* Add only a bottom border */
+    outline: none; /* Remove the default outline when focused */
+    padding: 5px 0;
+    width: 84%; /* Adjust width as needed */
+    font-size: 16px; /* Adjust font size as needed */
+}
+.title{
+	font-size: 27px;
+    padding: 16px;
+}
+
+.custom-button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+	margin-top: 10px;
+    cursor: pointer;
+    
+}
+
+.custom-button:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+}
+
+.custom-button:not(:disabled):hover {
+    background-color: #333;
+}
+.required-star {
+    color: red; /* Red color for the asterisk */
+    font-weight: bold; /* Make it bold */
+}
+
+.error-message {
+    color: red; /* Red color for error messages */
+    font-size: 0.9rem;
+    margin-top: 5px;
+    display: none; /* Hidden by default */
+}
+
+.success-icon {
+   position: absolute;
+   right: 10px;
+   width: 24px;
+   height: 24px;
+   background-color: #28a745; /* Green background color */
+   border-radius: 50%; /* Makes it circular */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: -29px;
+   margin-right: 78px
+}
+
+.success-icon::before {
+   content: '';
+   width: 12px;
+   height: 12px;
+   mask: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="white" d="M13.78 3.22a.75.75 0 0 1 0 1.06l-7 7a.75.75 0 0 1-1.06 0l-3-3a.75.75 0 1 1 1.06-1.06L6.25 9.44l6.47-6.47a.75.75 0 0 1 1.06 0z"/></svg>') no-repeat center;
+   -webkit-mask: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="white" d="M13.78 3.22a.75.75 0 0 1 0 1.06l-7 7a.75.75 0 0 1-1.06 0l-3-3a.75.75 0 1 1 1.06-1.06L6.25 9.44l6.47-6.47a.75.75 0 0 1 1.06 0z"/></svg>') no-repeat center;
+   mask-size: contain;
+   -webkit-mask-size: contain;
+   background-color: white; /* Icon color */
+}
+
+/* Wrapper for centering and alignment */
+.custom-table-wrapper {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;  /* Ensure it spans its parent */
+   height: 100%; /* Center within the parent container */
+   box-sizing: border-box;
+}
+
+/* Container with fixed dimensions */
+.custom-table-container {
+          margin-top: 5px;
+
+   width: 1076px;
+   height: 177.43px;
+
+   border: 1px solid #ddd;
+   background-color: #f9f9f9;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   box-sizing: border-box;
+   overflow: hidden; /* Prevent any scrollbars */
+   position: relative;
+    left: 37px;
+}
+
+/* Override SLDS scrollable behavior */
+.custom-table-container .slds-scrollable_x,
+.custom-table-container .slds-scrollable--x {
+   overflow: hidden !important; /* Hide horizontal scrolling */
+   max-width: 100% !important; /* Ensure content doesn't overflow */
+}
+
+/* Adjust table dimensions */
+.custom-table-container .custom-table .slds-table {
+   width: 100%;
+   height: 100%;
+   overflow: hidden; /* Prevent table scrollbars */
+   box-sizing: border-box;
+   white-space: nowrap; /* Prevent wrapping inside table cells */
+}
+
+/* Suppress specific SLDS scrolling styles */
+.custom-table-container .slds-scrollable_x::-webkit-scrollbar,
+.custom-table-container .slds-scrollable--x::-webkit-scrollbar {
+   display: none !important; /* Hide scrollbars explicitly for webkit browsers */
+}
+
+.slds-card{
+    height:224px; width:1200px;display: grid;
+}
+.table-title {
+   font-size: 15px;
+    position: relative;
+    right: 325%;
+    top: 30%;
+    font-weight: bold;
+}

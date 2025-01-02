@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="MultiList Example">
+    <lightning-combobox
+        name='name'
+        label='All Salesforce Objects'
+        value={selectedValue}
+        placeholde+r='---None---'
+        options={options}
+        onchange={handleChange}
+    ></lightning-combobox>
+    <br/><br/>
+    <lightning-dual-listbox name="languages"
+    label="Select Languages"
+    source-label="Available"
+    selected-label="Selected"
+    field-level-help="Select your preferred languages"
+    options={option}
+    onchange={handleChange1}></lightning-dual-listbox>
+    <br/><br/>
+    <lightning-button variant='brand' label='Create table with Record' title='Create record' onclick={handleOnClick} class='cssClass'>
+    </lightning-button>
+    <br/><br/>
+    <div style="height: 250px;">
+        <lightning-datatable
+            key-field="employeeId"
+            data={employeeData}
+            columns={employeeColumns}>
+        </lightning-datatable>
+    </div>
+
+
+
+</lightning-card>
+</template>

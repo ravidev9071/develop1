@@ -1,0 +1,28 @@
+<apex:page sidebar="false" showHeader="false" standardStylesheets="false" cache="false" applyBodyTag="false" applyHtmlTag="false">
+    <html>
+        <head>
+            <!-- Corrected & to &amp; and added =true for async and defer -->
+            <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&amp;render=explicit" async="true" defer="true"></script>
+            <script type="text/javascript">
+                // Callback for successful verification
+                var verifyCallback = function(response) {
+                    parent.postMessage(
+                        JSON.stringify({ success: true, token: response }),
+                        '*'
+                    );
+                };
+
+                // Initialize reCAPTCHA
+                var onloadCallback = function() {
+                    grecaptcha.render('reCAPTCHAWidget', {
+                        sitekey: '6LfLwKoqAAAAAB-OPO1wNU4veggEDe0t-gfcHpDF', // Replace with your site key
+                        callback: verifyCallback
+                    });
+                };
+            </script>
+        </head>
+        <body>
+            <div id="reCAPTCHAWidget"></div>
+        </body>
+    </html>
+</apex:page>

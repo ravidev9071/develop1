@@ -1,0 +1,85 @@
+<template>
+    <lightning-card title="All Country Record">
+        <!-- <template for:each={allcountrydata} for:item='item'>
+            
+            <p key={item.common}><b>{item.common}</b><br/></p>
+        </template> -->
+    
+
+     <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-label="Example default base table of Opportunities">
+        <thead>
+          <tr class="slds-line-height_reset">
+            <th class="" scope="col">
+                <div class="slds-truncate" title="S.No">S.No</div>
+              </th>
+              <th class="" scope="col">
+                <div class="slds-truncate" title="languages">Flag</div>
+              </th>
+            <th class="" scope="col">
+              <div class="slds-truncate" title="All Country Name">All Country Name</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate" title="official">Official</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate" title="All Country Name">Account and country</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate" title="capital">Capital</div>
+            </th>
+           
+            <th class="" scope="col">
+                <div class="slds-truncate" title="subregion">Currencies</div>
+              </th>
+          </tr>
+        </thead>
+        <tbody>
+            <template for:each={allcountrydata} for:item='item' for:index="index">
+                
+            
+          <tr class="slds-hint-parent" key={item.common}>
+            <td data-label="Account Name">
+                <div class="slds-truncate" title="Cloudhub">{item.sno}</div>
+              </td>
+              <td data-label="Contact">
+                <div class="slds-truncate" title="jrogers@cloudhub.com">
+                  <a href="#" tabindex="-1"><b>
+                     <img src={item.name.flags} alt="Girl in a jacket" width="500" height="600"> 
+
+                  </b></a>
+                </div>
+              </td>
+            <th data-label="Opportunity Name" scope="row">
+                
+              <div class="slds-truncate" title="Cloudhub">
+                <b href="#" tabindex="-1"><b></b>{item.name.common}</b></a>
+              </div>
+            </th>
+            
+            <td data-label="Close Date">
+              <div class="slds-truncate" title="4/14/2015"><b>{item.name.official}</b></div>
+            </td>
+            <td data-label="Close Date">
+              <div class="slds-truncate" title="4/14/2015"><b>{item.name.acclistnew.Name}</b></div>
+            </td>
+            <td data-label="Prospecting">
+              <div class="slds-truncate" title="Prospecting"><b>{item.name.capital1}</b></div>
+            </td>
+           
+            <td data-label="Amount">
+                <div class="slds-truncate" title="$25k"><b>{item.name.currencies}</b></div>
+                 
+              </td>
+             
+             
+          </tr>
+        </template>
+        </tbody>
+      </table>  
+
+
+
+
+
+    </lightning-card>
+</template>

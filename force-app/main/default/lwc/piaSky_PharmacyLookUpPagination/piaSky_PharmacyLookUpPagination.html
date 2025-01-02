@@ -1,0 +1,21 @@
+<template>
+    <lightning-card>
+         <div class="abc">
+         <lightning-layout class="slds-p-around_small">
+        <lightning-layout-item class="slds-align-middle slds-grid slds-large-size_2-of-12 slds-p-around_small slds-col " flexibility="grow">
+            <p class="slds-text-align_Left">Page {currentPage} of {totalPages} Pages</p>
+        </lightning-layout-item>
+       
+        <lightning-layout-item class="slds-align-left slds-col slds-p-around_small slds-large-size_7-of-12 slds-grid_align-end slds-col_bump-left">
+            <lightning-button-group class="slds-align-left slds-p-around_small slds-size_3-of-7 slds-c-button-line-height: 1rem">
+                <!-- <lightning-button label="Previous" onclick={previousPage} disabled={isFirstPage}></lightning-button> -->
+                <lightning-button-icon icon-name="utility:back" onclick={previousHandler} disabled={isFirstPage}></lightning-button-icon>
+            <!-- <lightning-button label="Next" onclick={nextPage} disabled={isLastPage}></lightning-button> -->
+        <lightning-button-icon icon-name="utility:forward" onclick={nextHandler} disabled={isLastPage} ></lightning-button-icon>
+            </lightning-button-group>
+        </lightning-layout-item>
+        
+    </lightning-layout>
+    </div>
+     </lightning-card>
+</template>

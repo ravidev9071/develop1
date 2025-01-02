@@ -1,0 +1,79 @@
+.slds-is-sortable{
+background-color:#b4eecd;
+padding-left: 10px;
+}
+.headerBorder{
+    height: 8px;
+    background: linear-gradient(90deg, rgba(236, 92, 47, 1) 0%, rgba(216, 132, 50, 1) 35%, rgba(235, 220, 156, 1) 95%);
+
+}
+.topnav {
+    margin: 0 15px;
+    position: relative;
+}
+.topnav ul.nav {
+    width: 100%;
+    display: flex;
+    margin: 0 10px;
+    padding-top: 10px;
+}
+.topnav ul.nav > li > a {
+    /* float: left; */
+    display: inline-block;
+    color: #333;
+    text-align: center;
+    padding: 0 15px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: "Roboto Condensed";
+    color: #333;
+}
+.slds-button.btnLogin {
+    border-color: rgba(0, 0, 0, 0);
+    color: #fff;
+    background-color: rgb(255, 103, 31);
+    box-shadow: 0 0 1px 0px rgba(0, 0, 0, 0) inset, 0 0 1px 0px rgba(0, 0, 0, 0);
+    border-radius: 15px;
+    padding: 10px 25px;
+    font-size: 1.2rem;
+    font-family: 'roboto condensed';
+    border-radius: 8px;
+    background: #e17000;
+    line-height: 1.4rem;
+}
+.topnav .nav a:hover {
+    color: #e17000;
+}
+ a:hover{
+   color: #e17000 !important;
+          border-bottom: 3px solid #ff671f !important ;
+   
+ }
+.topnav .nav a.active {
+    border-bottom: 3px solid #ff671f;
+}   
+.topnav ul.nav > li {
+    float: left;
+    /* padding: 15px 5px; */
+    padding: 0 0 15px;
+}
+
+a, button {
+    cursor: pointer;
+}
+img{
+    width: 47%;
+    left: 15px;
+    position: relative;
+}
+.aveedcss {
+   color: rgb(224, 133, 133) !important;
+   text-decoration: none;
+}
+ 
+
+.highlightpanel {
+   text-decoration: none !important;
+   border-bottom: 3px solid #16d4a1 !important;
+}

@@ -1,0 +1,59 @@
+<template>
+    <lightning-card title="Account Contacts Tree Grid">
+        <div class="slds-grid">
+            <div class="slds-col">
+                <lightning-button-icon
+                    icon-name="utility:refresh"
+                    alternative-text="Refresh"
+                    onclick={refreshData}>
+                </lightning-button-icon>
+            </div>
+        </div>
+        <div class="custom-tree-grid">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Account Name</th>
+                        <th>Contact Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={accounts} for:item="account">
+                        <tr key={account.Id} class="parent-row">
+                            <td>
+                                <div class="slds-grid slds-grid_align-spread">
+                                    <div>{account.Name}</div>
+                                    <lightning-icon
+                                        icon-name="utility:chevronright"
+                                        alternative-text="Expand"
+                                        title="Expand"
+                                        onclick={handleExpandContacts}
+                                        data-account-id={account.Id}
+                                        data-is-expanded={account.isExpanded}>
+                                    </lightning-icon>
+                                </div>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <template if:true={account.Contacts}>
+                            <template if:true={account.isExpanded}>
+                                <template for:each={account.Contacts} for:item="contact">
+                                    <tr key={contact.Id} class="child-row">
+                                        <td>{contact.Id}</td>
+                                        <td>{contact.Name}</td>
+                                        <td>{contact.Email}</td>
+                                        <td>{contact.Phone}</td>
+                                    </tr>
+                                </template>
+                            </template>
+                        </template>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+    </lightning-card>
+</template>

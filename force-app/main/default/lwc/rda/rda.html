@@ -1,0 +1,184 @@
+<template>
+	
+	<div class="slds-grid slds-wrap slds-gutters">
+		<div
+			class="slds-col slds-p-horizontal_medium slds-size_12-of-12 slds-large-size_12-of-12 slds-medium-size_12-of-12 ">
+			<lightning-card>
+				 <div class="pageContainer">
+          <div class="pageMainHeader">
+               <div class="slds-grid slds-gutters slds-wrap">
+                    <div class=" slds-col slds-size_1-of-1 slds-large-size_2-of-12">		
+                         <div class="themeLogo">
+                               <a href="home.html" class="logo">
+                                    <img  src={logo}>
+                                    <span class="slds-assistive-text">REMS Digital</span>
+                               </a>
+                         </div>	
+                    </div> <!-- end col  -->
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_10-of-12">		
+                         <nav class="topnav" id="CustomMainNav">
+                              <ul class="nav">
+                                   <li>
+                                        <a id="Home" href="" class={manage_hcs_CSS}>Home</a>
+                                   </li>
+                                   <li>
+                                        <a id="Lookup"  href="/lightning/o/Account/home"  target="_blank" class={formsandResourcesCSS}>Healthcare Setting & Healthcare Provider Lookup</a>  
+                                   </li>
+                                   <li>
+                                        <a id="Prescriber" href="/lightning/o/Contact/home" target="_blank" class={myprofileCSS}>Healthcare Provider Certification</a>
+                                   </li>
+                                   <li>
+                                        <a id="HCS" href="" class="mainNavLink">Healthcare Setting Certification</a>  
+                                   </li>
+                                   <li>
+                                        <a id="PCT" href=""   class="mainNavLink">Patient Counseling Tool</a>  
+                                   </li>	
+                                   <li>		
+                                        <button onclick={handleLoginClick} class="slds-button btnLogin" title="Login / Sign Up">Log In / Sign Up</button>		
+                                   </li>			
+                                   <li>
+                                        <span class="icon" onclick={handleLoginClick}>
+                                             <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                                        </span>
+                                   </li>
+                              </ul>
+                         </nav>	
+                    </div> <!-- end col  -->
+               </div> <!-- end row  -->
+          </div> <!-- end pageMainHeader  -->			
+     </div>  <!-- end pageContainer  -->	
+     <div class="headerBorder"></div>
+				<div data-aura-rendered-by="89:2;a"
+					class="siteforceSldsTwoCol84SidebarFeaturedLayout siteforceContentArea"
+					data-aura-class="siteforceSldsTwoCol84SidebarFeaturedLayout siteforceContentArea">
+					<div class="comm-content-header comm-layout-column pageContainer" data-aura-rendered-by="91:2;a">
+						<!--render facet: 92:2;a-->
+						<div class="slds-text-heading_large slds-align_absolute-center">Account Record Details</div>
+						<p class="slds-m-bottom_large"></p>
+<div class="headerBorder"></div>
+
+						<div class="slds-grid slds-gutters">
+							<div class="slds-col slds-size_1-of-1 slds-large-size_9-of-12">
+								<span>Data table</span>
+							</div>
+							<div class="slds-col slds-size_1-of-1 slds-large-size_2-of-12">
+								<span><lightning-input type="text" variant="standard" name="name" value="" label=""
+							placeholder="type here..." lwc:ref="accNameRef" onchange={textfind}></lightning-input></span>
+
+							</div>
+							<div class="slds-col slds-size_1-of-1 slds-large-size_1-of-12">
+								<lightning-icon icon-name="utility:refresh" alternative-text="Utility image"
+									title="Image" onclick={btnclick}></lightning-icon>
+
+							</div>
+						</div>
+						<div class="slds-m-bottom_large"></div>
+						<template if:true={records}>
+							<table
+								class="slds-table slds-table_bordered slds-table_fixed-layout slds-table_resizable-cols"
+								aria-labelledby="element-with-table-label other-element-with-table-label">
+								<thead>
+									<tr class="slds-line-height_reset">
+										<th class="slds-is-sortable">Name
+											<span class="slds-truncate slds-m-left_medium" title="CaseNumber" >
+            	          <lightning-icon icon-name={sortarrow} variant="inverse" data-title="Name" onclick={sortByColumn} size="xx-small"></lightning-icon>
+                    </span>
+										</th>
+
+										<th class="slds-is-sortable" scope="col">
+											<div class="slds-truncate" title="">
+												Phone
+											</div>
+										</th>
+										<th class="slds-is-sortable" scope="col">
+											<div class="slds-truncate" title="">
+												Created date
+											</div>
+										</th>
+										<th class="slds-is-sortable" scope="col">
+											<div class="slds-truncate" title="">
+												Description
+											</div>
+										</th>
+										<th class="slds-is-sortable" scope="col">
+											<div class="slds-truncate" title="">AnnualRevenue
+											</div>
+										</th>
+										<th class="slds-is-sortable" scope="col">
+											<div class="slds-truncate" title="">
+												AccountSource
+											</div>
+										</th>
+										<!-- Add more table headers for additional fields -->
+									</tr>
+								</thead>
+								<tbody>
+									<template for:each={visibleContacts} for:item="record">
+										<tr key={record.Id} class="slds-hint-parent">
+
+											<td data-label="Name">
+												<div class="slds-truncate" title={record.Name}>
+													{record.Name}
+												</div>
+											</td>
+
+											<td data-label="Phone">
+												<div class="slds-truncate" title={record.Phone}>
+													{record.Phone}
+												</div>
+											</td>
+											<td data-label=" CreatedDate">
+												<div class="slds-truncate" title={record.formattedCreatedDate}>
+													{record.formattedCreatedDate}
+													<!-- <lightning-formatted-date-time value={record.formattedCreatedDate} year="numeric" month="numeric" day="numeric" 
+                                          ></lightning-formatted-date-time> -->
+												</div>
+											</td>
+											<td data-label="Description">
+												<div class="slds-truncate" title={record.Description}>
+													{record.Description}
+												</div>
+											</td>
+											<td data-label="AnnualRevenue">
+												<div class="slds-truncate" title={record.AnnualRevenue}>
+													{record.AnnualRevenue}
+												</div>
+											</td>
+											<td data-label="AccountSource">
+												<div class="slds-truncate" title={record.AccountSource}>
+													{record.AccountSource}
+												</div>
+											</td>
+											<!-- Add more table cells for additional fields -->
+										</tr>
+									</template>
+								</tbody>
+							</table>
+							<template if:true={showPagination}>
+								<c-pia-sky-_-pharmacy-look-up-pagination record-size="3" records={records}
+									onupdate={updateRecords}>
+								</c-pia-sky-_-pharmacy-look-up-pagination>
+							</template>
+						</template>
+
+						<template if:true={showError}>
+
+							<div class="slds-notify slds-notify_alert slds-theme_alert-texture " role="alert">
+								<span class="slds-icon_container slds-icon-utility-error slds-m-right_small" title="Error">
+            <lightning-icon icon-name="utility:error" size="small" alternative-text="Error"></lightning-icon>
+        </span>
+								<h2 class="slds-text-heading_small">{noRecordMessage}</h2>
+							</div>
+						</template>
+					</div>
+				</div>
+			</lightning-card>
+		</div>
+	</div>
+	
+<template lwc:if={variable}>
+	 <div class="exampleHolder">
+        <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+    </div>
+</template>
+</template>

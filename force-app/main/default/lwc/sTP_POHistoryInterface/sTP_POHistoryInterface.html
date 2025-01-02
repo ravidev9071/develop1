@@ -1,0 +1,94 @@
+<template>
+   
+   <lightning-card style={outerCustomStyle}>
+      <div class="slds-grid slds-gutters ">
+         
+         <div class="slds-col">
+            <span>
+               <div class="slds-align_absolute-center">
+                  <lightning-card >
+                     <h1 class='title'>{label.STP_pageTitle}</h1>
+                     <p class="slds-p-horizontal_small">Aliquam tortor ex, volutpat non venenatis sit amet, vestibulum eu </br>dolor. Aenean condimentum nibh turpis, sit amet finibus leo rutrum.</p>
+                  </lightning-card>
+               </div>
+            </span>
+         </div>
+         <div class="slds-col">
+            <span>
+               <div class="input-container">
+                  <label for="poNumber" class="input-label">{label.STP_poNumberLabel}
+                  <span class="required-star">*</span>
+                  </label>
+                  
+                  <input
+                     type="text"
+                     id="STP_WebCasePONumber"
+                     class="custom-input"
+                     value={poNo}
+                     oninput={handleChange}
+                     />
+                     
+                     <template if:false={isDisabled}>
+                           <span class="success-icon"></span>
+                     </template>
+
+               </div>
+               <div class="input-container">
+                  <label for="invoiceNo" class="input-label">{label.STP_invoiceNumberLabel}
+                  <span class="required-star">*</span>
+                  </label>
+                  <input
+                     type="text"
+                     id="STP_WebCaseInvoiceNumber"
+                     class="custom-input"
+                     value={invoiceNo}
+                     oninput={handleChange}
+                     />
+                     <template if:false={isDisabled}>
+                           <span class="success-icon"></span>
+                     </template> 
+
+               </div>
+               <template if:true={showiframeandbtn}>
+               <div>
+                  <div>
+                     <iframe
+                        src={navigateTo}
+                        style="width: -webkit-fill-available; height: auto; min-height: 30vh; border: none;"
+                        scrolling="no"
+                        ></iframe>
+                  </div>
+               </div>
+               <div class="button-container">
+                  <button
+                     class="custom-button"
+                     onclick={handleSearch}
+                     disabled={isDisabled}
+                     >
+                  {searchStr}
+                  </button>
+               </div>
+               </template>
+            </span>
+         </div>
+      </div> 
+
+    </lightning-card >
+   <template if:true={showTable}>
+     <div class="slds-grid slds-grid_vertical custom-table-container slds-align_absolute-center">
+    <div class="slds-col slds-text-align_left">
+      <h3 class="table-title">
+        {InvoiceTitle}
+      </h3>
+    </div>
+    <div class="slds-col">
+      <lightning-datatable
+        key-field="id"
+        data={searchData}
+        columns={columns}
+        class="custom-table"
+      ></lightning-datatable>
+    </div>
+  </div>
+</template>
+</template>

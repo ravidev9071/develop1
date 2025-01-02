@@ -1,0 +1,39 @@
+/* Style for Active Records */
+.status-active {
+    background-color: green;
+    color: white;
+}
+
+/* Style for Inactive Records */
+.status-inactive {
+    background-color: rgb(128, 128, 128);
+    color: white;
+}
+
+/* Style for Deleted Records */
+.status-deleted {
+    background-color: red;
+    color: white;
+}
+
+/* Style for Updated/Active Names */
+.status-updated-active {
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    border: 2px solid green;
+}
+
+/* Style for Updated/Inactive Names */
+.status-updated-inactive {
+    background-color: lightblue;
+    color: black;
+    font-weight: bold;
+    border: 2px solid gray;
+}
+.status-unknown {
+    background-color: rgb(253, 181, 94);
+    color: white;
+    font-weight: bold;
+    border: 2px solid gray;
+}

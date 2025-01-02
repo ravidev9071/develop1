@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Loop Test In Lwc" icon-name="custom:custom14">
+        <ul class="slds-m-around_medium">
+        <template for:each={data} for:item="dt">
+            <li key={dt.Id}>
+            {dt.Id},<br/>{dt.Name},<br/>{dt.Address}
+            </li>
+        </template>
+        </ul>
+    </lightning-card>
+</template>

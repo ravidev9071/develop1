@@ -1,0 +1,7 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+    <div style="background-color: #f4f6f9; padding: 10px; border-radius: 5px;">
+        <h1 style="color:green;">Static Message</h1>
+        <p>This is a static message displayed on the detail page.</p>
+    </div>
+</aura:component>

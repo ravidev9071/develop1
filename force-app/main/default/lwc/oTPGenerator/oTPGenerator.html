@@ -1,0 +1,61 @@
+<template>
+    <lightning-card icon-name="" variant="base" >   
+    <div>
+        <template if:true={resendotp}>
+            <lightning-button class="slds-align_absolute-center"  
+            variant='brand' label='Resend OTP' 
+            title='send otp' 
+            onclick={handleOnClick}>
+            </lightning-button>
+        </template>
+    </div>
+        <template if:true={otpshow}>
+            <lightning-button class="slds-align_absolute-center" 
+            style="width: 141px;" variant='brand'
+            label='Generate new OTP' 
+            title='send otp' 
+            onclick={handleOnClick}>
+            </lightning-button><br>
+        </template><br>
+        <div>
+            <input type="text" 
+            class="partitioned slds-align_absolute-center"
+            maxlength="4"
+            onchange={handleOnChange}/>
+        </div>
+    <!-- 
+    <lightning-input type='text' maxlength="6"  label='Fill otp'  >
+    </lightning-input>
+    -->
+    <br><br><br>
+    <template if:true={verifiedbutton}>
+            <lightning-button class="slds-align_absolute-center" 
+            style="width:76px;" 
+            variant='brand'
+            label='Varified'
+            title='title' 
+            onclick={Varified}>
+            </lightning-button>
+        </template>
+        <template if:false={verifiedbutton}>
+            <lightning-button class="slds-align_absolute-center" 
+            style="width:76px;" 
+            variant='brand'
+            label='Varified'
+            title='title' 
+            onclick={Varified} disabled>
+            </lightning-button>
+        </template>
+    <br><br>
+    <div class="slds-grid slds-align_absolute-center">
+            <div class="slds-col slds-size_4-of-12">
+            <span><b class="test">Your OTP is valid till only</b></span>
+            </div>
+            <div class="sslds-col slds-size_8-of-12">
+            <span> <h1 style="color:green;margin-left:150px;font-size:18px;"><b>{number}</b></h1></span>
+            </div>
+    </div>
+    <br><br>
+    <span style="color:Red;margin-left:100px;font-size:30px;"><b> {otpdata}</b></span>
+    </lightning-card>
+</template>

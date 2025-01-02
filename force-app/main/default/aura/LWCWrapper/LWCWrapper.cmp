@@ -1,0 +1,4 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<!-- LWCWrapper.cmp -->
+    <c:helloWorld aura:id="lwcComponent" /> <!-- Replace `YourLWCComponent` with your LWC name -->
+</aura:component>

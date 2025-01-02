@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>reCAPTCHA Demo: Auto-Submit</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form id="captcha-form" onsubmit="return false;">
+        <div 
+            class="g-recaptcha" 
+            data-sitekey="6LfLwKoqAAAAAB-OPO1wNU4veggEDe0t-gfcHpDF" 
+            data-callback="onCaptchaSuccess"
+            data-expired-callback="onCaptchaExpired">
+        </div>
+    </form>
+
+    <script type="text/javascript">
+        // Called when CAPTCHA verification succeeds
+        function onCaptchaSuccess() {
+            console.log('CAPTCHA verified successfully.');
+            parent.postMessage("captcha success", location.origin);
+        }
+
+        // Called when CAPTCHA expires
+        function onCaptchaExpired() {
+            console.log('CAPTCHA expired.');
+            parent.postMessage("captcha failed", location.origin);
+        }
+    </script>
+</body>
+</html>
