@@ -63,7 +63,7 @@ export default class STP_POHistoryInterface extends LightningElement {
         console.log('Event origin:', event.origin); // Debugging log
         console.log('Event data:', event.data); // Debugging log
 
-if (event.origin === 'https://ravidev2023-dev-ed.develop.my.site.com') {
+if (event.origin === System.label.Origin) {
     try {
         console.log('Raw Event Data:', event.data);
         console.log('Type of Event Data:', typeof event.data);
