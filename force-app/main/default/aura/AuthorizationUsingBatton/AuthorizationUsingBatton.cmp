@@ -16,6 +16,7 @@
     <br/><br/><br/>
     <h1>  Access Token:</h1>
     {!v.showToken}
+    <!-- Testing -->
     
     
 </aura:component>
