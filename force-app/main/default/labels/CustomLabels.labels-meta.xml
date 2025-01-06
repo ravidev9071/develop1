@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Origin</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Origin</shortDescription>
+        <value>https://ravidev2023-dev-ed.develop.my.site.com</value>
+    </labels>
+    <labels>
+        <fullName>STP_POHistoryPageTitle</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>STP_POHistoryPageTitle</shortDescription>
+        <value>Search for your invoice</value>
+    </labels>
+    <labels>
+        <fullName>STP_WebCaseInvoiceNumber</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>STP_WebCaseInvoiceNumber</shortDescription>
+        <value>Invoice Number</value>
+    </labels>
+    <labels>
+        <fullName>STP_WebCasePONumber</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>STP_WebCasePONumber</shortDescription>
+        <value>Purchase Order Number (PO)</value>
+    </labels>
+</CustomLabels>
