@@ -4,6 +4,7 @@ import pageUrl from '@salesforce/resourceUrl/recaptchaV2';
 import STP_pageTitle from '@salesforce/label/c.STP_POHistoryPageTitle';
 import STP_poNumberLabel from '@salesforce/label/c.STP_WebCasePONumber';
 import STP_invoiceNumberLabel from '@salesforce/label/c.STP_WebCaseInvoiceNumber';
+import Origin from '@salesforce/label/c.Origin';
 import fetchPODetails from '@salesforce/apex/STP_POHistoryController.fetchPODetails';
 
 export default class STP_POHistoryInterface extends LightningElement {
@@ -43,6 +44,7 @@ export default class STP_POHistoryInterface extends LightningElement {
         STP_pageTitle,
         STP_poNumberLabel,
         STP_invoiceNumberLabel,
+        Origin,
     };
 
     connectedCallback() {
@@ -63,7 +65,7 @@ export default class STP_POHistoryInterface extends LightningElement {
         console.log('Event origin:', event.origin); // Debugging log
         console.log('Event data:', event.data); // Debugging log
 
-if (event.origin === System.label.Origin) {
+if (event.origin ===Origin) {
     try {
         console.log('Raw Event Data:', event.data);
         console.log('Type of Event Data:', typeof event.data);

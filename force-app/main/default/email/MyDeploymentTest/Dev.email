@@ -1,0 +1,49 @@
+<messaging:emailTemplate subject="PIASKY REMS | Pharmacy Staff Invitation" recipientType="Contact" relatedToType="Account" renderUsingSystemContextWithoutSharing="True">
+<messaging:htmlEmailBody >
+ <table width="100%">
+ <tr>
+      <td align="right"> 
+      <img src="" width="150" height="50"/>
+  </td>
+ </tr>
+</table>
+<div style="font-size:12px; font-family: Arial;">
+Dear 
+<br> </br>
+Your pharmacy’s authorized representative has invited you to create credentials in the PIASKY REMS website to allow you to perform activities on behalf of the pharmacy.
+<br> </br>
+Please select the button below to continue
+<br></br> <br></br> 
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%"> <tr><td align="center"> <table cellpadding="0" cellspacing="0" width="98" border="0" style="border-collapse: separate !important;"> <tr><td style="background-color:#110359;color:#FFFFFF;font-size:15px;padding:10px 12px;border-radius:2px;font-family:Arial, Helvetica, sans-serif;text-align:center;border:solid 1px #FFFFFF"><a  style="color:#FFFFFF;text-decoration:none;">Continue</a></td></tr> </table></td></tr></table>
+
+<br/>
+<br/>
+If you have any questions, you may call the PIASKY REMS at 1-888-572-2934, Monday through Friday, 8:00 AM to 8:00 PM EST.
+<br/>
+
+<br></br>
+Sincerely,  
+<br> </br>
+
+The PiaSky REMS <br></br>
+Phone: 1-866-469-7599 (1-866-4My-Skyy) <br></br>
+Fax:&nbsp;&nbsp;1-833-670-4840 <br></br>
+<a href="http://www.PiaSkyREMS.com">www.PiaSkyREMS.com</a>
+<br> </br>
+<br></br>
+<br></br>
+Report adverse events to FDA by visiting <a href="https://www.fda.gov/medwatch">www.fda.gov/medwatch</a> or call 1-800-FDA-1088.  
+<br/>
+<br/>
+<br/>
+<b>Confidentiality Notice:</b> This email, its contents, and attachments (if any) are for the intended recipient(s) only and may contain information which is confidential and/or proprietary. No confidentiality is waived or lost by any transmission errors. If you are not the intended recipient, please notify the sender, and then please delete and destroy all copies of the email and attachments. Be advised that any review, dissemination, or taking any action in reliance on, the information contained in or attached to this email is prohibited. This email is not intended for distribution to, or use by, any person or entity in any location where such distribution or use would be contrary to law or regulation. The transmission and content of this email cannot be guaranteed to be secure or free of errors or viruses and the Program accepts no liability for any damage caused by any virus transmitted by this email. 
+
+<br/> 
+<br/>
+Please <i><b>do not reply</b></i> to this unattended email address. This email is intended for U.S. Healthcare Professionals.<br/>
+
+
+</div>
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>
