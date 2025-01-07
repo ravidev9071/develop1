@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Series__c</fullName>
+    <label>Series</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Accessrioes__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Realme 12 Pro</fullName>
+                <default>false</default>
+                <label>Realme 12 Pro</label>
+            </value>
+            <value>
+                <fullName>Realme 12 Pro Plus</fullName>
+                <default>false</default>
+                <label>Realme 12 Pro Plus</label>
+            </value>
+            <value>
+                <fullName>Realme 12 Pro Plus Max</fullName>
+                <default>false</default>
+                <label>Realme 12 Pro Plus Max</label>
+            </value>
+            <value>
+                <fullName>Samsung Table 1</fullName>
+                <default>false</default>
+                <label>Samsung Table 1</label>
+            </value>
+            <value>
+                <fullName>Samsung Table 2</fullName>
+                <default>false</default>
+                <label>Samsung Table 2</label>
+            </value>
+            <value>
+                <fullName>Samsung Table 3</fullName>
+                <default>false</default>
+                <label>Samsung Table 3</label>
+            </value>
+            <value>
+                <fullName>Samsung Table 4</fullName>
+                <default>false</default>
+                <label>Samsung Table 4</label>
+            </value>
+            <value>
+                <fullName>Dell</fullName>
+                <default>false</default>
+                <label>Dell</label>
+            </value>
+            <value>
+                <fullName>Lanovo</fullName>
+                <default>false</default>
+                <label>Lanovo</label>
+            </value>
+            <value>
+                <fullName>Hp</fullName>
+                <default>false</default>
+                <label>Hp</label>
+            </value>
+            <value>
+                <fullName>Acer</fullName>
+                <default>false</default>
+                <label>Acer</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Mobile</controllingFieldValue>
+            <valueName>Realme 12 Pro</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mobile</controllingFieldValue>
+            <valueName>Realme 12 Pro Plus</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Mobile</controllingFieldValue>
+            <valueName>Realme 12 Pro Plus Max</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tablet</controllingFieldValue>
+            <valueName>Samsung Table 1</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tablet</controllingFieldValue>
+            <valueName>Samsung Table 2</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tablet</controllingFieldValue>
+            <valueName>Samsung Table 3</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tablet</controllingFieldValue>
+            <valueName>Samsung Table 4</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Laptop</controllingFieldValue>
+            <valueName>Dell</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Laptop</controllingFieldValue>
+            <valueName>Lanovo</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Laptop</controllingFieldValue>
+            <valueName>Hp</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Laptop</controllingFieldValue>
+            <valueName>Acer</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>
